@@ -4,33 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="container">
-        <div id="calculadora">
-            <div class="box" id="resultado">0</div>
-            <div class="box" id="actual">0</div>
+        <section id="calculadora">
+            <div class="contenedor">
+                <p>Total</p>
+                <div class="box" id="actual">0</div>
+                <p>Total + Propina</p>
+                <div class="box" id="resultado">0</div>
+            </div>
             <br> 
             <div id="botones" class="grid-container">
                 <button class="botonCalc" id="boton1">1</button>
                 <button class="botonCalc" id="boton2">2</button>
                 <button class="botonCalc" id="boton3">3</button>
-                <button class="botonCalc" id="boton+">+</button>
+                <button class="botonOp" id="boton_10">10%</button>
                 <button class="botonCalc" id="boton4">4</button>
                 <button class="botonCalc" id="boton5">5</button>
                 <button class="botonCalc" id="boton6">6</button>
-                <button class="botonCalc" id="boton-">-</button>
+                <button class="botonOp" id="boton_15">15%</button>
                 <button class="botonCalc" id="boton7">7</button>
                 <button class="botonCalc" id="boton8">8</button>
                 <button class="botonCalc" id="boton9">9</button>
-                <button class="botonCalc" id="boton/">/</button>
+                <button class="botonOp" id="boton_20">20%</button>
                 <div></div>
                 <button class="botonCalc" id="boton0">0</button>
-                <div></div>
-                <button class="botonCalc" id="boton*">x</button>
+                <button class="botonDel" id="botonDelete">
+                    <span class="material-symbols-outlined">
+                        backspace
+                    </span>
+                </button>
+                <!-- <button class="botonDel" id="botonDel">
+                    <span class="material-symbols-outlined">
+                        delete
+                    </span>
+                </button> -->
             </div>
-        </div>
+        </section>
     </div>
     <script type="text/javascript" src="index.js"></script>
     <script src="/path/to/mousetrap.min.js"></script>

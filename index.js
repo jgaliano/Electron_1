@@ -21,15 +21,15 @@ Mousetrap.bind('7', click7);
 Mousetrap.bind('8', click8);
 Mousetrap.bind('9', click9);
 Mousetrap.bind('0', click0);
-Mousetrap.bind('+', clickSuma);
+Mousetrap.bind(String.fromCharCode(8), Delete_p);
 Mousetrap.bind('-', );
 Mousetrap.bind('+', );
 Mousetrap.bind('x', );
 
-var botonSuma = document.getElementById('boton+')
-var botonResta = document.getElementById('boton-')
-var botonMult = document.getElementById('boton/')
-var botonDiv = document.getElementById('boton*')
+var boton_10p = document.getElementById('boton_10')
+var boton_15p = document.getElementById('boton_15')
+var boton_20p = document.getElementById('boton_20')
+var botonDelete_p = document.getElementById('botonDelete')
 
 var resultado = document.getElementById('resultado')
 var actual = document.getElementById('actual')
@@ -45,46 +45,110 @@ boton7.addEventListener('click', click7)
 boton8.addEventListener('click', click8)
 boton9.addEventListener('click', click9)
 boton0.addEventListener('click', click0)
-botonSuma.addEventListener('click', clickSuma)
+boton_10p.addEventListener('click', click10p)
+boton_15p.addEventListener('click', click15p)
+boton_20p.addEventListener('click', click20p)
+botonDelete_p.addEventListener('click', Delete_p)
 
 function click1(){
-    actual.innerHTML+='1'
+
+    if (actual.innerHTML === '0'){
+        actual.innerHTML=''
+        var numero = '1'
+        actual.innerHTML+= numero
+    }else{
+        actual.innerHTML+= '1'
+    }
 }
 
 function click2(){
-    actual.innerHTML+='2'
+    if (actual.innerHTML === '0'){
+        actual.innerHTML=''
+        var numero = '2'
+        actual.innerHTML+= numero
+    }else{
+        actual.innerHTML+= '2'
+    }
 }
 
 function click3(){
-    actual.innerHTML+='3'
+    if (actual.innerHTML === '0'){
+        actual.innerHTML=''
+        var numero = '3'
+        actual.innerHTML+= numero
+    }else{
+        actual.innerHTML+= '3'
+    }
 }
 
 function click4(){
-    actual.innerHTML+='4'
+    if (actual.innerHTML === '0'){
+        actual.innerHTML=''
+        var numero = '4'
+        actual.innerHTML+= numero
+    }else{
+        actual.innerHTML+= '4'
+    }
 }
 
 function click5(){
-    actual.innerHTML+='5'
+    if (actual.innerHTML === '0'){
+        actual.innerHTML=''
+        var numero = '5'
+        actual.innerHTML+= numero
+    }else{
+        actual.innerHTML+= '5'
+    }
 }
 
 function click6(){
-    actual.innerHTML+='6'
+    if (actual.innerHTML === '0'){
+        actual.innerHTML=''
+        var numero = '6'
+        actual.innerHTML+= numero
+    }else{
+        actual.innerHTML+= '6'
+    }
 }
 
 function click7(){
-    actual.innerHTML+='7'
+    if (actual.innerHTML === '0'){
+        actual.innerHTML=''
+        var numero = '7'
+        actual.innerHTML+= numero
+    }else{
+        actual.innerHTML+= '7'
+    }
 }
 
 function click8(){
-    actual.innerHTML+='8'
+    if (actual.innerHTML === '0'){
+        actual.innerHTML=''
+        var numero = '8'
+        actual.innerHTML+= numero
+    }else{
+        actual.innerHTML+= '8'
+    }
 }
 
 function click9(){
-    actual.innerHTML+='9'
+    if (actual.innerHTML === '0'){
+        actual.innerHTML=''
+        var numero = '9'
+        actual.innerHTML+= numero
+    }else{
+        actual.innerHTML+= '9'
+    }
 }
 
 function click0(){
-   actual.innerHTML+='0'
+    if (actual.innerHTML === '0'){
+        actual.innerHTML=''
+        var numero = '0'
+        actual.innerHTML+= numero
+    }else{
+        actual.innerHTML+= '0'
+    }
 }
 
 function clickSuma(){
@@ -92,4 +156,30 @@ function clickSuma(){
     let valorResultado = parseInt(resultado.innerHTML)
     resultado.innerHTML = valorActual + valorResultado
     actual.innerHTML = '0'
+}
+
+function click10p(){
+    let valorActual = parseInt(actual.innerHTML);
+    resultado.innerHTML = (valorActual * 0.10) + valorActual;
+}
+
+function click15p(){
+    let valorActual = parseInt(actual.innerHTML);
+    resultado.innerHTML = (valorActual * 0.15) + valorActual;
+}
+
+function click20p(){
+    let valorActual = parseInt(actual.innerHTML);
+    resultado.innerHTML = (valorActual * 0.20) + valorActual;
+}
+
+function Delete_p(){
+    let valorActual = actual.innerHTML
+
+    if (valorActual.length > 1){
+        let new_valores = valorActual.slice(0, -1)
+        actual.innerHTML = new_valores
+    }else {
+        actual.innerHTML = '0'
+    } 
 }
