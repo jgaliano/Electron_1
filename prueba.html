@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación de Prueba</title>
+    <style>
+        *{
+            background-color: black;
+            color: white ;
+        }
+        .box{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        button{
+             height: 50px;
+             width: 150px;
+             background-color: green;
+             border-radius: 20px;
+             font-size: 20px;
+             color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Consumo API Cat</h1>
+        <button onclick="Mostrar()">
+            Consumir
+        </button>   
+        <br>
+        <div id="container">
+            <!-- Imagen -->
+            <img src="" alt="">
+        </div>
+    </div>
+    <script>
+        function Mostrar(){
+            const url = "https://api.thecatapi.com/v1/images/search"
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    Imagen(data[0].url)        
+                })
+        }
+
+        function Imagen(url){
+            const caja = document.getElementById('container');
+            const media = document.createElement('img')
+            media.src = url;
+            media.alt = 'Gatos';
+            caja.innerHTML = '';
+            caja.appendChild(media) 
+        }
+    </script>
+</body>
+</html>
